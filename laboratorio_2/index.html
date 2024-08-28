@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab1</title>
+</head>
+<body>
+    <h1>¿Qué es JavaScript y en qué se asemeja a Java</h1>
+    <p>Javascript es un lenguaje de programación que permite agregar funcionalidades avanzadas a una
+        página web. Le da la capacidad a una página web de ser dinámica e interactiva en vez de estática.
+        Permite mostrar animaciones, mapas interactivos, cambiar fuentes, interactuar con el servidor, entre otras.
+        Javascript se asemeja a Java ya que ambos son lenguajes de programación orientado a objetos. Ambos emplean
+        encapsulación, abstracción, polimorfismo y herencia.
+    </p>
+    <script>
+        var num1 = 20;
+        var num2 = 50;
+        console.log(`Suma: ${num1+num2}`);
+        console.log(`Resta: ${num1-num2}`);
+        console.log(`Multiplicación: ${num1*num2}`);
+        console.log(`División: ${num1/num2}`);
+        let palabra1 = "Hola";
+        let palabra2 = " Mundo";
+        console.log(palabra1+palabra2);
+        const valor1 = 100;
+        const valor2 = "100";
+        console.log(typeof(valor1));
+        console.log(typeof(valor2));
+        var objeto = {
+            num: 10,
+            cadena: "Soy una cadena",
+            buleano: true,
+            objVacio: {}
+        }
+        function calculo(numPos){
+            var multiploTres = 0;
+            var multiploCinco = 0;
+            for (let i=0; i<numPos; i++){
+                if((i%3) == 0){
+                    multiploTres+=i;
+                }
+                if((i%5) == 0){
+                    multiploCinco+=i;
+                }
+            }
+            return multiploTres+multiploCinco;
+        }
+        console.log(`Resultado de la función utilizando el numero 10: ${calculo(10)}`);
+    </script>
+</body>
+</html>

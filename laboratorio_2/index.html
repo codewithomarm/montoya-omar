@@ -6,6 +6,8 @@
     <title>Lab1</title>
 </head>
 <body>
+    <!-- Problema #1. Escribir una etiqueta "p" dentro del HTML, la respuesta a la pregunta:
+        ¿Qué es JavaScript y en qué se asemeja a Java? -->
     <h1>¿Qué es JavaScript y en qué se asemeja a Java</h1>
     <p>Javascript es un lenguaje de programación que permite agregar funcionalidades avanzadas a una
         página web. Le da la capacidad a una página web de ser dinámica e interactiva en vez de estática.
@@ -14,39 +16,59 @@
         encapsulación, abstracción, polimorfismo y herencia.
     </p>
     <script>
+        /*  Problema #2: Declarar dos variables con la palabra reservada "var",
+            imprimir las operaciones de "Suma, "Resta", "Multiplicación", y "División
+            en la consola. Las variables pueden ser estáticas. */
         var num1 = 20;
         var num2 = 50;
         console.log(`Suma: ${num1+num2}`);
         console.log(`Resta: ${num1-num2}`);
         console.log(`Multiplicación: ${num1*num2}`);
         console.log(`División: ${num1/num2}`);
+        /*  Problema #3: Declarar dos variables con la palabra reservada "let",
+            imprimir la contactenación de ambas. */
         let palabra1 = "Hola";
         let palabra2 = " Mundo";
         console.log(palabra1+palabra2);
+        /*  Problema #4: Declarar dos variables con la palabra reservada "const",
+            imprimir cuál es el tipo de dato de esa variable. */
         const valor1 = 100;
         const valor2 = "100";
         console.log(typeof(valor1));
         console.log(typeof(valor2));
+        /*  Problema #5: Declarar una variable de tipo Objeto, colocar 4 propiedades
+            dentro de él que contengan un number, un string, un booleano
+            y un objeto vacío, en ese mismo orden. */
         var objeto = {
             num: 10,
             cadena: "Soy una cadena",
             buleano: true,
             objVacio: {}
         }
+        /*  Problema #6: Escribir una función en JS que tome un número entero positivo
+            como argumento y devuelva la suma de todos los números menores que sean
+            múltiplos de 3 o 5. */
         function calculo(numPos){
-            var multiploTres = 0;
-            var multiploCinco = 0;
-            for (let i=0; i<numPos; i++){
-                if((i%3) == 0){
-                    multiploTres+=i;
+            if (numPos >= 0){
+                var multiploTres = 0;
+                var multiploCinco = 0;
+                for (let i=0; i<numPos; i++){
+                    if((i%3) == 0){
+                        multiploTres+=i;
+                    }
+                    if((i%5) == 0){
+                        multiploCinco+=i;
+                    }
                 }
-                if((i%5) == 0){
-                    multiploCinco+=i;
-                }
+                return multiploTres+multiploCinco;
+            } else {
+                return "Número no válido";
             }
-            return multiploTres+multiploCinco;
+            
         }
         console.log(`Resultado de la función utilizando el numero 10: ${calculo(10)}`);
+        console.log(`Resultado de la función utilizando el numero -10: ${calculo(-10)}`);
+        console.log(`Resultado de la función utilizando el numero 0: ${calculo(0)}`);
     </script>
 </body>
 </html>

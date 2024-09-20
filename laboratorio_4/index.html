@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <section>
+            <form id="formulario-1">
+                <label>Ingrese su texto: </label>
+                <input type="text" id="input-1" name="textoUsuario" required>
+            </form>
+            <div>
+                <span id="respuesta-1"></span>
+            </div>
+        </section>
+    </main>
+    <script>
+        const Utils = (() => {
+            return {
+                reverseString(s) {
+                    return String(s).split('').reverse().join('');
+                }
+            }
+        } )();
+
+        const App = (() => {
+            const htmlElements = {
+                input: document.querySelector('#input-1'),
+                response: document.querySelector('#respuesta-1')
+            }
+
+            const handlers = {
+                onChange(e) {
+                    e.preventDefault();
+                    const strInput = htmlElements.input.value;
+                    const strReverse = Utils.reverseString(strInput);
+                    htmlElements.response.innerHTML = `<span>Entrada en reversa: ${strReverse}</span>`;
+                }
+            }
+
+            const bindEvents = () => {
+                htmlElements.input.addEventListener('input', handlers.onChange);
+            }
+
+            return {
+                init() {
+                    bindEvents();
+                },
+            };
+        })(Utils);
+
+        App.init();
+    </script>
+</body>
+</html>
